@@ -13,6 +13,6 @@ requests
 pandas
 numpy
 motor
-"pymongo[srv]"
+pymongo[srv]
 pdf2image
 python-multipart
