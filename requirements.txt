@@ -12,3 +12,7 @@ Pillow
 requests
 pandas
 numpy
+motor
+"pymongo[srv]"
+pdf2image
+python-multipart
