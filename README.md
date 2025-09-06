@@ -49,13 +49,39 @@ The diagram below illustrates the flow of data from the user to the AI model and
 
 ```mermaid
 graph TD
-A[User] -- Uploads Document --> B(Streamlit Frontend);
-B -- HTTP Request --> C{FastAPI Backend};
-C -- Extracts Text --> D;
-D -- Formats Prompt --> E(Google Gemini AI via LangChain);
-E -- Returns Structured Analysis --> C;
-C -- Formats JSON Response --> B;
-B -- Displays Results & Insights --> A;
+    %% Define Node Shapes and Text
+    A["User Interface (Frontend - Streamlit)"]
+    B("Document Upload (PDF/Image)")
+    C("Document Ingestion (pdftoimage)")
+    D["Application Layer (Backend - FastAPI)"]
+    E["AI Orchestration Layer (Langchain)"]
+    F["Information Extraction (using Gemini AI)"]
+    G["Risk Assessment & Scoring"]
+    H["Decision Engine (Business Rules)"]
+    I[("Data Persistence (MongoDB)")]
+    J["Cross Validation using Database"]
+    K{"Approval / Rejection"}
+
+    %% Define Connections
+    B --> C
+    A --> D
+    C --> E
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    H --> I
+    
+    %% Cross Validation Connections
+    F --> J
+    G --> J
+    H --> J
+    A --> J
+    I --> J
+    
+    %% Final Result Connection
+    J --> K
+    K -.-> A
 ```
 
 ## Technology Stack
