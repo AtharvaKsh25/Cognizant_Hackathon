@@ -65,7 +65,7 @@ The project leverages a curated set of modern technologies to deliver its capabi
 - **Backend:** FastAPI, Uvicorn
 - **Frontend:** Streamlit
 - **AI & Machine Learning:** Google Gemini, LangChain
-- **Document Parsing:** PyPDF, python-docx, Tesseract OCR
+- **Document Parsing:** Pdf2image
 - **Data Handling:** Pandas, JSON
 
 ## Getting Started
@@ -78,10 +78,6 @@ Ensure you have the following software installed on your system:
 
 - **Git:** For cloning the repository.
 - **Python 3.8+:** The core programming language.
-- **Tesseract OCR:** Required for extracting text from image-based documents (PNG, JPG, JPEG).
-  - **Windows:** [Download the installer](https://github.com/UB-Mannheim/tesseract/wiki).
-  - **macOS:** Install via Homebrew: `brew install tesseract`.
-  - **Linux (Debian/Ubuntu):** Install via APT: `sudo apt-get install tesseract-ocr`.
 
 ### Installation and Configuration
 
