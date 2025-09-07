@@ -219,7 +219,7 @@ For ideas on where to start, please see the [#roadmap-future-enhancements](#road
 This project has a strong foundation with significant potential for growth. The following is a list of planned enhancements that would further increase its value and capabilities:
 
 - **Batch Document Processing:** Implement functionality to upload and process multiple documents simultaneously.
-- **Advanced Document Validation Rules:** Introduce configurable rules to validate extracted data against predefined criteria (e.g., income thresholds).
+- **Advanced Document Validation Rules:** Introduce configurable rules to validate extracted data against predefined criteria (e.g.income thresholds).
 - **Export to Multiple Formats:** Allow users to export the structured analysis results to formats like CSV or JSON.
 - **Integration with Loan Management Systems (LMS):** Develop connectors to push extracted data directly into common LMS platforms.
 - **Advanced Fraud Detection:** Enhance the AI model to detect more subtle signs of document tampering or fraudulent information.
