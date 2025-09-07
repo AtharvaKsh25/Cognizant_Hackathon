@@ -47,6 +47,59 @@ This architectural pattern is particularly effective for AI-driven applications.
 
 The diagram below illustrates the flow of data from the user to the AI model and back through the system's components.
 
+```mermaid
+graph TD
+    subgraph "User Layer"
+        U("Loan Officer / User")
+    end
+
+    subgraph "Presentation Layer (Frontend - Streamlit)"
+        A("app.py: UI Components")
+        A1["Categorized File Uploaders"]
+        A2["'Process Application' Button"]
+        A4["Individual Document Verification (HITL Forms)"]
+        A5["Reporting Dashboard"]
+    end
+
+    subgraph "Application Layer (Backend - FastAPI)"
+        B("main.py: API Endpoints")
+        B1["POST /process-application/"]
+        B2["POST /save-verified-document/"]
+        B3["DELETE /delete-all-data/"]
+        B4["GET /get-report-data/"]
+        C{"AI Orchestration Engine"}
+    end
+
+    subgraph "Intelligence Layer (External Service)"
+        D["Google Generative AI API"]
+    end
+
+    subgraph "Data Layer (NoSQL Database)"
+        E[("MongoDB<br/>loan_processing DB<br/>verified_documents collection")]
+    end
+
+    U -- "Uploads Docs" --> A1
+    A1 -- "Groups Files" --> A2
+    A2 -- "Clicks Process" --> B1
+    
+    B1 -- "Triggers" --> C
+    C -- "Unified Prompt" --> D
+    D -- "Returns JSON" --> C
+    C -- "Final Summary Prompt" --> D
+    D -- "Returns Final Report" --> C
+    C -- "Sends Response" --> A4
+    
+    A4 -- "User Clicks 'Approve & Save'" --> B2
+    B2 -- "Inserts new record,<br/>deactivates old version" --> E
+    
+    A5 -- "On Page Load, Fetches Data" --> B4
+    B4 -- "Queries for active records" --> E
+    E -- "Returns Data" --> B4
+    B4 -- "Sends Report JSON" --> A5
+
+    style U fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#9f9,stroke:#333,stroke-width:2px
+```
 
 
 
@@ -205,3 +258,4 @@ This project was developed by the following contributors as part of a Cognizant 
 - Atharva Talla
 - Abhishek Ghadge
 - Anuj Nimkar
+- Gunjan Sharma
