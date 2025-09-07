@@ -47,12 +47,7 @@ This architectural pattern is particularly effective for AI-driven applications.
 
 The diagram below illustrates the flow of data from the user to the AI model and back through the system's components.
 
-graph TD
-    subgraph "User Layer"
-        U("Loan Officer / User")
-    end
-
-   ```mermaid
+```mermaid
 graph TD
     subgraph "User Layer"
         U("Loan Officer / User")
@@ -104,6 +99,7 @@ graph TD
 
     style U fill:#f9f,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
+
 
 
 ## Technology Stack
