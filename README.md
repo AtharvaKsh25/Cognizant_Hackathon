@@ -52,6 +52,12 @@ graph TD
         U("Loan Officer / User")
     end
 
+   ```mermaid
+graph TD
+    subgraph "User Layer"
+        U("Loan Officer / User")
+    end
+
     subgraph "Presentation Layer (Frontend - Streamlit)"
         A("app.py: UI Components")
         A1["Categorized File Uploaders"]
@@ -98,6 +104,7 @@ graph TD
 
     style U fill:#f9f,stroke:#333,stroke-width:2px
     style E fill:#9f9,stroke:#333,stroke-width:2px
+
 
 ## Technology Stack
 
